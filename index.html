@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aizen Clipping AI</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#09090d;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 18px;border-bottom:1px solid #292933}
+.logo{font-size:22px;font-weight:900;color:#ff3155}
+.logo span{color:#fff}
+main{max-width:720px;margin:55px auto;padding:20px}
+h1{font-size:38px;line-height:1.15;margin:0 0 14px}
+h1 span{color:#ff3155}
+p{color:#a4a4b0;line-height:1.6}
+label{display:block;margin:24px 0 9px;font-size:14px}
+input{width:100%;padding:16px;background:#17171f;color:white;border:1px solid #383844;border-radius:10px;font-size:15px}
+button{width:100%;margin-top:14px;padding:16px;border:0;border-radius:10px;background:#ff3155;color:#fff;font-weight:bold;font-size:16px;cursor:pointer}
+.note{font-size:12px;color:#777}
+.results{margin-top:28px;display:grid;gap:12px}
+.card{padding:17px;background:#17171f;border:1px solid #30303a;border-radius:12px}
+.card strong{display:block;margin-bottom:7px}
+footer{text-align:center;padding:30px;color:#666;font-size:12px}
+</style>
+</head>
+<body>
+<header><div class="logo">AIZEN <span>CLIPPING AI</span></div></header>
+<main>
+<h1>Turn Videos Into <span>Viral Clips.</span></h1>
+<p>Paste a YouTube URL to start finding your best moments. Create five clips, each 30–50 seconds long.</p>
+<label for="url">YouTube video URL</label>
+<input id="url" type="url" placeholder="https://www.youtube.com/watch?v=..." />
+<button onclick="findClips()">Find My Top 5 Clips →</button>
+<p class="note">Target format: 16:9 landscape · MP4 · 30–50 seconds</p>
+<div id="results" class="results"></div>
+</main>
+<footer>© 2026 Aizen Clipping AI</footer>
+<script>
+function findClips(){
+const url=document.getElementById('url').value.trim();
+const out=document.getElementById('results');
+if(!/^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\//i.test(url)){
+out.innerHTML='<div class="card">Please enter a valid YouTube URL.</div>';
+return;
+}
+out.innerHTML='<div class="card"><strong>URL received ✓</strong>Your interface is ready. AI analysis and MP4 clip generation still need a connected backend before this button can create actual clips.</div>';
+}
+</script>
+</body>
+</html>
